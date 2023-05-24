@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cav Properties Real Estate</title>
+    <style>
+        body {
+            background-color: #73C2FB; /* Dark grey background color */
+            margin: 0;
+            padding: 0;
+        }
+        
+        .bg {
+            height: 100%;
+        }
+        
+        header {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        header img {
+            width: 140px;
+            height: auto;
+        }
+        
+        nav {
+            text-align: right;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: #ffffff; /* White navigation link color */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #A9A9A9; /* Light grey navigation link color on hover */
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #cccccc;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+        .slides {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        
+        .slides img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        
+        .slides img:first-child {
+            display: block;
+        }
+        
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+        
+        .search-bar {
+         position: absolute;
+         top: 40%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+        } 
+        
+        .search-bar h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+        
+        .search-bar .value-prop {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+        
+        .search-bar form {
+            margin-top: 20px;
+        }
+        
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border-radius: 4px;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .search-bar input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #cccccc;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            border: none;
+            font-size: 1rem;
+            margin-left: 10px;
+        }
+        
+        .search-bar input[type="submit"]:hover {
+            background-color: #ffffff;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <header>
+            <img src="CAV.png" alt="CAV Logo">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section class="landing">
+                <div class="search-bar">
+                    <h2>Search it. Find it. Own it.</h2>
+                    <p class="value-prop">Find your dream home with ease.</p>
+                    <form action="search.html" method="GET">
+                        <input type="text" name="search" placeholder="Enter location or property type">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+                <img src="cabin.jpeg" alt="Slide 1" width="100%" height="auto">
+            </section>
+            <div class="slides">
+                <img src="home.jpeg" alt="Slide 1">
+                <img src="Edwards-Smith.jpeg" alt="Slide 2">
+                <img src="lounge.jpeg" alt="Slide 3">
+                <img src="cab.jpeg" alt="Slide 4">
+                <img src="llbl.jpeg" alt="Slide 5">
+                <div class="prev" onclick="prevSlide()">&#10094;</div>
+                <div class="next" onclick="nextSlide()">&#10095;</div>
+            </div>
+            
+            <!-- The rest of your main content here -->
+            <section>
+                <h2>Featured Properties</h2>
+                <!-- Property listings or additional content -->
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 Cav Properties Real Estate. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slides")[0].getElementsByTagName("img");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+        
+        function prevSlide() {
+            slideIndex--;
+            if (slideIndex < 1) {
+                slideIndex = slides.length;
+            }
+            showSlides();
+        }
+        
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            showSlides();
+        }
+    </script>
+</body>
+</html>
+
+            
+
+
+
+
